@@ -4,13 +4,16 @@ import static br.relesi.rlessa.utils.DataUtils.adicionarDias;
 
 import java.util.Date;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 import br.relesi.rlessa.entidades.Filme;
 import br.relesi.rlessa.entidades.Locacao;
 import br.relesi.rlessa.entidades.Usuario;
 import br.relesi.rlessa.utils.DataUtils;
 
 public class LocacaoService {
-	
+
 	public Locacao alugarFilme(Usuario usuario, Filme filme) {
 		Locacao locacao = new Locacao();
 		locacao.setFilme(filme);
@@ -18,32 +21,32 @@ public class LocacaoService {
 		locacao.setDataLocacao(new Date());
 		locacao.setValor(filme.getPrecoLocacao());
 
-		//Entrega no dia seguinte
+		// Entrega no dia seguinte
 		Date dataEntrega = new Date();
 		dataEntrega = adicionarDias(dataEntrega, 1);
 		locacao.setDataRetorno(dataEntrega);
-		
-		//Salvando a locacao...	
-		//TODO adicionar método para salvar
-		
+
+		// Salvando a locacao...
+		// TODO adicionar método para salvar
+
 		return locacao;
 	}
+	@Test
+	public void teste() {
 
-	public static void main(String[] args) {
-		
-		//cenario		
+		// cenario
 		LocacaoService service = new LocacaoService();
 		Usuario usuario = new Usuario("Usuario 1");
 		Filme filme = new Filme("Filme", 2, 5.0);
-		
-		//acao
+
+		// acao
 		Locacao locacao = service.alugarFilme(usuario, filme);
+
+		// verificacao
 		
-		//verificacao 
-		
-		System.out.println(locacao.getValor() == 5.0);
-		System.out.println(DataUtils.isMesmaData(locacao.getDataLocacao(), new Date()));
-		System.out.println(DataUtils.isMesmaData(locacao.getDataRetorno(), DataUtils.obterDataComDiferencaDias(1)));
-		
+		Assert.assertTrue(locacao.getValor() == 5.0);		
+		Assert.assertTrue(DataUtils.isMesmaData(locacao.getDataLocacao(), new Date()));
+		Assert.assertTrue(DataUtils.isMesmaData(locacao.getDataRetorno(), DataUtils.obterDataComDiferencaDias(1)));
+
 	}
 }
