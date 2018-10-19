@@ -11,7 +11,9 @@ import java.util.Date;
 
 import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ErrorCollector;
 
 import br.relesi.rlessa.entidades.Filme;
 import br.relesi.rlessa.entidades.Locacao;
@@ -19,6 +21,9 @@ import br.relesi.rlessa.entidades.Usuario;
 import br.relesi.rlessa.utils.DataUtils;
 
 public class LocacaoServiceTest {
+	
+	@Rule
+	public ErrorCollector error = new ErrorCollector();
 
 	
 	@Test
@@ -34,10 +39,10 @@ public class LocacaoServiceTest {
 
 		
 		//verificacao
-		assertThat(locacao.getValor(), is(equalTo(5.0)));
-		assertThat(locacao.getValor(), is(not(6.0)));
-		assertThat(DataUtils.isMesmaData(locacao.getDataLocacao(), new Date()), is(true));
-		assertThat(DataUtils.isMesmaData(locacao.getDataRetorno(), DataUtils.obterDataComDiferencaDias(1)), is(true));
+		error.checkThat(locacao.getValor(), is(equalTo(5.0)));
+		error.checkThat(locacao.getValor(), is(not(6.0)));
+		error.checkThat(DataUtils.isMesmaData(locacao.getDataLocacao(), new Date()), is(true));
+		error.checkThat(DataUtils.isMesmaData(locacao.getDataRetorno(), DataUtils.obterDataComDiferencaDias(1)), is(true));
 
 	}
 
