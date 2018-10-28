@@ -1,5 +1,7 @@
 package br.relesi.rlessa.entidades;
 
+
+
 import java.util.Date;
 
 public class Locacao {

@@ -1,5 +1,7 @@
-br\relesi\rlessa\entidades\Filme.class
+br\relesi\rlessa\exceptions\FilemSemEstoqueException.class
+br\relesi\rlessa\exceptions\LocadoraException.class
 br\relesi\rlessa\utils\DataUtils.class
-br\relesi\rlessa\servicos\LocacaoService.class
 br\relesi\rlessa\entidades\Usuario.class
 br\relesi\rlessa\entidades\Locacao.class
+br\relesi\rlessa\entidades\Filme.class
+br\relesi\rlessa\servicos\LocacaoService.class

@@ -1,5 +1,7 @@
 package br.relesi.rlessa.entidades;
 
+
+
 public class Usuario {
 
 	private String nome;
@@ -42,6 +44,4 @@ public class Usuario {
 			return false;
 		return true;
 	}
-	
-	
 }

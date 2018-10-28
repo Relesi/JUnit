@@ -1,6 +1,8 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-TestesUnitarios,br.relesi.rlessa.entidades,Usuario,42,30,9,5,14,10,11,2,4,2
+TestesUnitarios,br.relesi.rlessa.entidades,Usuario,66,6,14,0,21,3,12,1,5,1
 TestesUnitarios,br.relesi.rlessa.entidades,Filme,18,18,0,0,8,7,5,3,5,3
 TestesUnitarios,br.relesi.rlessa.entidades,Locacao,6,32,0,0,2,14,2,9,2,9
-TestesUnitarios,br.relesi.rlessa.servicos,LocacaoService,0,44,0,2,0,12,0,3,0,2
-TestesUnitarios,br.relesi.rlessa.utils,DataUtils,38,51,5,3,9,12,7,3,3,3
+TestesUnitarios,br.relesi.rlessa.servicos,LocacaoService,0,57,0,6,0,16,0,5,0,2
+TestesUnitarios,br.relesi.rlessa.exceptions,LocadoraException,0,4,0,0,0,2,0,1,0,1
+TestesUnitarios,br.relesi.rlessa.exceptions,FilemSemEstoqueException,0,3,0,0,0,1,0,1,0,1
+TestesUnitarios,br.relesi.rlessa.utils,DataUtils,37,52,5,3,9,12,7,3,3,3

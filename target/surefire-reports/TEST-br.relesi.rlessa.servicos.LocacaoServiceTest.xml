@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="br.relesi.rlessa.servicos.LocacaoServiceTest" time="0.082" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="br.relesi.rlessa.servicos.LocacaoServiceTest" time="0.049" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_181\jre\bin"/>
@@ -47,7 +47,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_181\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="user.language.format" value="pt"/>
@@ -65,8 +65,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="br.relesi.rlessa.servicos.LocacaoServiceTest" name="testLocacao_filmeSemEstoque_2" time="0.023"/>
-  <testcase classname="br.relesi.rlessa.servicos.LocacaoServiceTest" name="testLocacao_filmeSemEstoque3" time="0.033"/>
-  <testcase classname="br.relesi.rlessa.servicos.LocacaoServiceTest" name="teste" time="0.026"/>
+  <testcase classname="br.relesi.rlessa.servicos.LocacaoServiceTest" name="testeLocacao" time="0.04"/>
+  <testcase classname="br.relesi.rlessa.servicos.LocacaoServiceTest" name="testLocacao_FilmeVazio" time="0.008"/>
+  <testcase classname="br.relesi.rlessa.servicos.LocacaoServiceTest" name="testLocacao_usuarioVazio" time="0.001"/>
   <testcase classname="br.relesi.rlessa.servicos.LocacaoServiceTest" name="testLocacao_filmeSemEstoque" time="0"/>
 </testsuite>

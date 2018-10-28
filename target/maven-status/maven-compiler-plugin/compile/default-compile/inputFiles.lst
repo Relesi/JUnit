@@ -2,4 +2,6 @@ C:\development\workspace\TestesUnitarios\src\main\java\br\relesi\rlessa\entidade
 C:\development\workspace\TestesUnitarios\src\main\java\br\relesi\rlessa\entidades\Usuario.java
 C:\development\workspace\TestesUnitarios\src\main\java\br\relesi\rlessa\utils\DataUtils.java
 C:\development\workspace\TestesUnitarios\src\main\java\br\relesi\rlessa\entidades\Locacao.java
+C:\development\workspace\TestesUnitarios\src\main\java\br\relesi\rlessa\exceptions\FilemSemEstoqueException.java
 C:\development\workspace\TestesUnitarios\src\main\java\br\relesi\rlessa\servicos\LocacaoService.java
+C:\development\workspace\TestesUnitarios\src\main\java\br\relesi\rlessa\exceptions\LocadoraException.java

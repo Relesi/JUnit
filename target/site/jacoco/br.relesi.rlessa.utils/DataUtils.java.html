@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DataUtils.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TestesUnitarios</a> &gt; <a href="index.source.html" class="el_package">br.relesi.rlessa.utils</a> &gt; <span class="el_source">DataUtils.java</span></div><h1>DataUtils.java</h1><pre class="source lang-java linenums">package br.relesi.rlessa.utils;
 
+
+
 import static java.util.Calendar.DAY_OF_MONTH;
 import static java.util.Calendar.DAY_OF_WEEK;
 import static java.util.Calendar.MONTH;
@@ -8,7 +10,7 @@ import static java.util.Calendar.YEAR;
 import java.util.Calendar;
 import java.util.Date;
 
-<span class="nc" id="L11">public class DataUtils {</span>
+<span class="nc" id="L13">public class DataUtils {</span>
 	
 	/**
 	 * Retorna a data enviada por parametro com a adição dos dias desejado
@@ -19,10 +21,10 @@ import java.util.Date;
 	 * @return
 	 */
 	public static Date adicionarDias(Date data, int dias) {
-<span class="fc" id="L22">		Calendar calendar = Calendar.getInstance();</span>
-<span class="fc" id="L23">		calendar.setTime(data);</span>
-<span class="fc" id="L24">		calendar.add(DAY_OF_MONTH, dias);</span>
-<span class="fc" id="L25">		return calendar.getTime();</span>
+<span class="fc" id="L24">		Calendar calendar = Calendar.getInstance();</span>
+<span class="fc" id="L25">		calendar.setTime(data);</span>
+<span class="fc" id="L26">		calendar.add(DAY_OF_MONTH, dias);</span>
+<span class="fc" id="L27">		return calendar.getTime();</span>
 	}
 	
 	/**
@@ -33,7 +35,7 @@ import java.util.Date;
 	 * @return Data atualizada
 	 */
 	public static Date obterDataComDiferencaDias(int dias) {
-<span class="fc" id="L36">		return adicionarDias(new Date(), dias);</span>
+<span class="fc" id="L38">		return adicionarDias(new Date(), dias);</span>
 	}
 	
 	/**
@@ -45,11 +47,11 @@ import java.util.Date;
 	 * @return
 	 */
 	public static Date obterData(int dia, int mes, int ano){
-<span class="nc" id="L48">		Calendar calendar = Calendar.getInstance();</span>
-<span class="nc" id="L49">		calendar.set(DAY_OF_MONTH, dia);</span>
-<span class="nc" id="L50">		calendar.set(MONTH, mes - 1);</span>
-<span class="nc" id="L51">		calendar.set(YEAR, ano);</span>
-<span class="nc" id="L52">		return calendar.getTime();</span>
+<span class="nc" id="L50">		Calendar calendar = Calendar.getInstance();</span>
+<span class="nc" id="L51">		calendar.set(DAY_OF_MONTH, dia);</span>
+<span class="nc" id="L52">		calendar.set(MONTH, mes - 1);</span>
+<span class="nc" id="L53">		calendar.set(YEAR, ano);</span>
+<span class="nc" id="L54">		return calendar.getTime();</span>
 	}
 	
 	/**
@@ -61,13 +63,13 @@ import java.util.Date;
 	 * @return
 	 */
 	public static boolean isMesmaData(Date data1, Date data2) {
-<span class="fc" id="L64">		Calendar calendar1 = Calendar.getInstance();</span>
-<span class="fc" id="L65">		calendar1.setTime(data1);</span>
-<span class="fc" id="L66">		Calendar calendar2 = Calendar.getInstance();</span>
-<span class="fc" id="L67">		calendar2.setTime(data2);</span>
-<span class="pc bpc" id="L68" title="1 of 2 branches missed.">		return (calendar1.get(DAY_OF_MONTH) == calendar2.get(DAY_OF_MONTH))</span>
-<span class="pc bpc" id="L69" title="1 of 2 branches missed.">				&amp;&amp; (calendar1.get(MONTH) == calendar2.get(MONTH))</span>
-<span class="pc bpc" id="L70" title="1 of 2 branches missed.">				&amp;&amp; (calendar1.get(YEAR) == calendar2.get(YEAR));</span>
+<span class="fc" id="L66">		Calendar calendar1 = Calendar.getInstance();</span>
+<span class="fc" id="L67">		calendar1.setTime(data1);</span>
+<span class="fc" id="L68">		Calendar calendar2 = Calendar.getInstance();</span>
+<span class="fc" id="L69">		calendar2.setTime(data2);</span>
+<span class="pc bpc" id="L70" title="1 of 2 branches missed.">		return (calendar1.get(DAY_OF_MONTH) == calendar2.get(DAY_OF_MONTH))</span>
+<span class="pc bpc" id="L71" title="1 of 2 branches missed.">				&amp;&amp; (calendar1.get(MONTH) == calendar2.get(MONTH))</span>
+<span class="pc bpc" id="L72" title="1 of 2 branches missed.">				&amp;&amp; (calendar1.get(YEAR) == calendar2.get(YEAR));</span>
 	}
 	
 	/**
@@ -78,9 +80,9 @@ import java.util.Date;
 	 * @return
 	 */
 	public static boolean verificarDiaSemana(Date data, int diaSemana) {
-<span class="nc" id="L81">		Calendar calendar = Calendar.getInstance();</span>
-<span class="nc" id="L82">		calendar.setTime(data);</span>
-<span class="nc bnc" id="L83" title="All 2 branches missed.">		return calendar.get(DAY_OF_WEEK) == diaSemana;</span>
+<span class="nc" id="L83">		Calendar calendar = Calendar.getInstance();</span>
+<span class="nc" id="L84">		calendar.setTime(data);</span>
+<span class="nc bnc" id="L85" title="All 2 branches missed.">		return calendar.get(DAY_OF_WEEK) == diaSemana;</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>
