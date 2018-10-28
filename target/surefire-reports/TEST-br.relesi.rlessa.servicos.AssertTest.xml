@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="1" name="br.relesi.rlessa.servicos.AssertTest" time="0.019" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="br.relesi.rlessa.servicos.AssertTest" time="0.003" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_181\jre\bin"/>
@@ -30,7 +30,7 @@
     <property name="os.name" value="Windows 10"/>
     <property name="classworlds.conf" value="C:/development/maven/apache-maven-3.5.4/bin/m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_181\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\r.lessa.da.silva\bin;C:\Users\r.lessa.da.silva\AppData\Local\Programs\Git\mingw64\bin;C:\Users\r.lessa.da.silva\AppData\Local\Programs\Git\usr\local\bin;C:\Users\r.lessa.da.silva\AppData\Local\Programs\Git\usr\bin;C:\Users\r.lessa.da.silva\AppData\Local\Programs\Git\usr\bin;C:\Users\r.lessa.da.silva\AppData\Local\Programs\Git\mingw64\bin;C:\Users\r.lessa.da.silva\AppData\Local\Programs\Git\usr\bin;C:\Users\r.lessa.da.silva\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\development\maven\apache-maven-3.5.4\bin;C:\development\maven\apache-maven-3.5.4;C:\Program Files\Java\jdk1.8.0_181\bin;C:\Program Files\Java\jdk1.8.0_181;C:\development\spring-1.5.0.RELEASE\bin;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Java\jdk1.8.0_181;C:\development\spring-1.5.0.RELEASE\bin;C:\Users\r.lessa.da.silva\AppData\Local\Microsoft\WindowsApps;C:\Program Files\MongoDB\Server\4.0\bin;C:\Users\r.lessa.da.silva\AppData\Local\Programs\Git\usr\bin\vendor_perl;C:\Users\r.lessa.da.silva\AppData\Local\Programs\Git\usr\bin\core_perl;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_181\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\r.lessa.da.silva\bin;C:\Users\r.lessa.da.silva\AppData\Local\Programs\Git\mingw64\bin;C:\Users\r.lessa.da.silva\AppData\Local\Programs\Git\usr\local\bin;C:\Users\r.lessa.da.silva\AppData\Local\Programs\Git\usr\bin;C:\Users\r.lessa.da.silva\AppData\Local\Programs\Git\usr\bin;C:\Users\r.lessa.da.silva\AppData\Local\Programs\Git\mingw64\bin;C:\Users\r.lessa.da.silva\AppData\Local\Programs\Git\usr\bin;C:\Users\r.lessa.da.silva\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\development\maven\apache-maven-3.5.4\bin;C:\development\maven\apache-maven-3.5.4;C:\Program Files\Java\jdk1.8.0_181\bin;C:\Program Files\Java\jdk1.8.0_181;C:\development\spring-1.5.0.RELEASE\bin;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Java\jdk1.8.0_181;C:\development\spring-1.5.0.RELEASE\bin;C:\Users\r.lessa.da.silva\AppData\Local\Microsoft\WindowsApps;C:\Program Files\MongoDB\Server\4.0\bin;C:\Users\r.lessa.da.silva\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\r.lessa.da.silva\AppData\Local\Programs\Git\usr\bin\vendor_perl;C:\Users\r.lessa.da.silva\AppData\Local\Programs\Git\usr\bin\core_perl;."/>
     <property name="maven.conf" value="C:/development/maven/apache-maven-3.5.4/conf"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
@@ -47,7 +47,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_181\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="user.language.format" value="pt"/>
@@ -65,41 +65,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="br.relesi.rlessa.servicos.AssertTest" name="test" time="0.019">
-    <failure message="Comparação errada expected:&lt;1&gt; but was:&lt;2&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Comparação errada expected:&lt;1&gt; but was:&lt;2&gt;
-	at org.junit.Assert.fail(Assert.java:88)
-	at org.junit.Assert.failNotEquals(Assert.java:834)
-	at org.junit.Assert.assertEquals(Assert.java:645)
-	at br.relesi.rlessa.servicos.AssertTest.test(AssertTest.java:15)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</failure>
-  </testcase>
+  <testcase classname="br.relesi.rlessa.servicos.AssertTest" name="test" time="0.003"/>
 </testsuite>
