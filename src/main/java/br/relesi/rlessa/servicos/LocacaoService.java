@@ -8,12 +8,12 @@ import java.util.List;
 import br.relesi.rlessa.entidades.Filme;
 import br.relesi.rlessa.entidades.Locacao;
 import br.relesi.rlessa.entidades.Usuario;
-import br.relesi.rlessa.exceptions.FilemSemEstoqueException;
+import br.relesi.rlessa.exceptions.FilmeSemEstoqueException;
 import br.relesi.rlessa.exceptions.LocadoraException;
 
 public class LocacaoService {
 
-	public Locacao alugarFilme(Usuario usuario, List<Filme> filmes) throws FilemSemEstoqueException, LocadoraException {
+	public Locacao alugarFilme(Usuario usuario, List<Filme> filmes) throws FilmeSemEstoqueException, LocadoraException {
 		if (usuario == null) {
 			throw new LocadoraException("Usuario vazio");
 		}
@@ -23,9 +23,8 @@ public class LocacaoService {
 		}
 
 		for (Filme filme : filmes) {
-
 			if (filme.getEstoque() == 0) {
-				throw new FilemSemEstoqueException();
+				throw new FilmeSemEstoqueException();
 			}
 		}
 
@@ -34,8 +33,28 @@ public class LocacaoService {
 		locacao.setUsuario(usuario);
 		locacao.setDataLocacao(new Date());
 		Double valorTotal = 0d;
-		for (Filme filme : filmes) {
-			valorTotal = +filme.getPrecoLocacao();
+		for (int i = 0; i < filmes.size(); i++) {
+			Filme filme = filmes.get(i);
+			Double valorFilme = filme.getPrecoLocacao();
+			
+			switch (i) {
+				case 2:			
+					valorFilme = valorFilme * 0.75;			
+				break;
+				
+				case 3:
+					valorFilme = valorFilme * 0.5;
+				break;
+				
+				case 4:
+					valorFilme = valorFilme * 0.25;
+				break;
+				
+				case 5:
+					valorFilme = 0d;
+				break;		
+			}
+			valorTotal += valorFilme;
 		}
 		locacao.setValor(valorTotal);
 
@@ -45,7 +64,7 @@ public class LocacaoService {
 		locacao.setDataRetorno(dataEntrega);
 
 		// Salvando a locacao...
-		// TODO adicionar mÃ©todo para salvar
+		// TODO adicionar método para salvar
 
 		return locacao;
 	}
