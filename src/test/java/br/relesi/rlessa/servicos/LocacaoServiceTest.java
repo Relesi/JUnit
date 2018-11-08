@@ -1,5 +1,7 @@
 package br.relesi.rlessa.servicos;
 
+import static br.relesi.rlessa.matchers.MachersProprios.cairEm;
+import static br.relesi.rlessa.matchers.MachersProprios.cairNumaSegunda;
 import static br.relesi.rlessa.utils.DataUtils.isMesmaData;
 import static br.relesi.rlessa.utils.DataUtils.obterDataComDiferencaDias;
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -28,6 +30,8 @@ import br.relesi.rlessa.entidades.Locacao;
 import br.relesi.rlessa.entidades.Usuario;
 import br.relesi.rlessa.exceptions.FilmeSemEstoqueException;
 import br.relesi.rlessa.exceptions.LocadoraException;
+import br.relesi.rlessa.matchers.DiaSemanaMatcher;
+import br.relesi.rlessa.matchers.MachersProprios;
 import br.relesi.rlessa.utils.DataUtils;
 
 public class LocacaoServiceTest {
@@ -152,9 +156,12 @@ public class LocacaoServiceTest {
 		
 		//verificacao	
 		
-		boolean ehSegunda = DataUtils.verificarDiaSemana(retorno.getDataRetorno(), Calendar.MONDAY);
-		Assert.assertTrue(ehSegunda);
-
+		/*boolean ehSegunda = DataUtils.verificarDiaSemana(retorno.getDataRetorno(), Calendar.MONDAY);
+		Assert.assertTrue(ehSegunda);*/
+//		assertThat(retorno.getDataRetorno(),new DiaSemanaMatcher(Calendar.MONDAY));
+		
+		assertThat(retorno.getDataRetorno(), cairEm(Calendar.MONDAY));
+		assertThat(retorno.getDataRetorno(), cairNumaSegunda());
 		
 	}
 	
