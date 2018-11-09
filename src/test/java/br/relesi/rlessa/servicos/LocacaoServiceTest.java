@@ -1,7 +1,6 @@
 package br.relesi.rlessa.servicos;
 
-import static br.relesi.rlessa.matchers.MachersProprios.cairEm;
-import static br.relesi.rlessa.matchers.MachersProprios.cairNumaSegunda;
+
 import static br.relesi.rlessa.utils.DataUtils.isMesmaData;
 import static br.relesi.rlessa.utils.DataUtils.obterDataComDiferencaDias;
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -31,7 +30,8 @@ import br.relesi.rlessa.entidades.Usuario;
 import br.relesi.rlessa.exceptions.FilmeSemEstoqueException;
 import br.relesi.rlessa.exceptions.LocadoraException;
 import br.relesi.rlessa.matchers.DiaSemanaMatcher;
-import br.relesi.rlessa.matchers.MachersProprios;
+
+import br.relesi.rlessa.matchers.MatchersProprios;
 import br.relesi.rlessa.utils.DataUtils;
 
 public class LocacaoServiceTest {
@@ -141,31 +141,20 @@ public class LocacaoServiceTest {
 	}		
 
 	@Test
-	public void deveDevolverNaSegundaAoAlugarSabado() throws FilmeSemEstoqueException, LocadoraException{
-		
+	public void deveDevolverNaSegundaAoAlugarNoSabado() throws FilmeSemEstoqueException, LocadoraException{
 		Assume.assumeTrue(DataUtils.verificarDiaSemana(new Date(), Calendar.SATURDAY));
 		
 		//cenario
-	
 		Usuario usuario = new Usuario("Usuario 1");
-		List<Filme> filmes = Arrays.asList(	new Filme("Filme 1", 1, 5.0));
+		List<Filme> filmes = Arrays.asList(new Filme("Filme 1", 1, 5.0));
 		
 		//acao
-		
 		Locacao retorno = service.alugarFilme(usuario, filmes);
 		
-		//verificacao	
-		
-		/*boolean ehSegunda = DataUtils.verificarDiaSemana(retorno.getDataRetorno(), Calendar.MONDAY);
-		Assert.assertTrue(ehSegunda);*/
-//		assertThat(retorno.getDataRetorno(),new DiaSemanaMatcher(Calendar.MONDAY));
-		
-		assertThat(retorno.getDataRetorno(), cairEm(Calendar.MONDAY));
-		assertThat(retorno.getDataRetorno(), cairNumaSegunda());
+		//verificacao
+		assertThat(retorno.getDataRetorno(), MatchersProprios.caiNumaSegunda());
 		
 	}
-	
-	
 	
 
 }
