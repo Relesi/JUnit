@@ -70,9 +70,7 @@ public class CalculoValorLocacaoTest {
 		//verificacao		
 
 		assertThat(resultado.getValor(), is(valorLocacao));
+	
 	}
-//	@Test
-//	public void print() {
-//		System.out.println(valorLocacao);
-//	}
+
 }

@@ -48,27 +48,27 @@ public class LocacaoServiceTest {
 
 	@Before
 	public void setup() {
-		System.out.println("Berfore");
+		//System.out.println("Berfore");
 		service = new LocacaoService();
 		contador++;
-		System.out.println(contador);
+		//System.out.println(contador);
 		// incremento
 		// impressao do contator
 	}
 
 	@After
 	public void testDown() {
-		System.out.println("After");
+		//System.out.println("After");
 	}
 
 	@BeforeClass
 	public static void setupClass() {
-		System.out.println("BerforeClass");
+		//System.out.println("BerforeClass");
 	}
 
 	@AfterClass
 	public static void testDownClass() {
-		System.out.println("AfterClass");
+		//System.out.println("AfterClass");
 		LocacaoService service = new LocacaoService();
 	}
 
@@ -81,7 +81,7 @@ public class LocacaoServiceTest {
 		Usuario usuario = new Usuario("Usuario 1");
 		List<Filme> filmes = Arrays.asList(new Filme("Filme 1", 1, 5.0));
 		
-		System.out.println("Teste");
+		//System.out.println("Teste");
 
 		// acao
 		Locacao locacao = service.alugarFilme(usuario, filmes);
