@@ -1,8 +1,9 @@
 package br.relesi.rlessa.servicos;
 
 
-import static br.relesi.rlessa.utils.DataUtils.isMesmaData;
-import static br.relesi.rlessa.utils.DataUtils.obterDataComDiferencaDias;
+
+import static br.relesi.rlessa.matchers.MatchersProprios.ehHoje;
+import static br.relesi.rlessa.matchers.MatchersProprios.ehHojeComDiferencasDias;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -18,7 +19,6 @@ import org.junit.Assert;
 import org.junit.Assume;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
@@ -29,8 +29,6 @@ import br.relesi.rlessa.entidades.Locacao;
 import br.relesi.rlessa.entidades.Usuario;
 import br.relesi.rlessa.exceptions.FilmeSemEstoqueException;
 import br.relesi.rlessa.exceptions.LocadoraException;
-import br.relesi.rlessa.matchers.DiaSemanaMatcher;
-
 import br.relesi.rlessa.matchers.MatchersProprios;
 import br.relesi.rlessa.utils.DataUtils;
 
@@ -89,9 +87,15 @@ public class LocacaoServiceTest {
 		Locacao locacao = service.alugarFilme(usuario, filmes);
 
 		// verificacao
+
 		error.checkThat(locacao.getValor(), is(equalTo(5.0)));
-		error.checkThat(isMesmaData(locacao.getDataLocacao(), new Date()), is(true));
-		error.checkThat(isMesmaData(locacao.getDataRetorno(), obterDataComDiferencaDias(1)), is(true));
+		//error.checkThat(isMesmaData(locacao.getDataLocacao(), new Date()), is(true));		
+		error.checkThat(locacao.getDataLocacao(), ehHoje(0));		
+		//error.checkThat(isMesmaData(locacao.getDataRetorno(), obterDataComDiferencaDias(1)), is(true));		
+		error.checkThat(locacao.getDataRetorno(), ehHojeComDiferencasDias(1));
+		
+		
+		
 	}
 
 	// Teste de maneira elegante
